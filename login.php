@@ -14,12 +14,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     } else {
         // Redirect back to login.html with error parameter
-        header("Location: login.html?error=1");
+        header("Location: index.html?error=1");
         exit;
     }
 } else {
     // If accessed without POST, redirect to login form
-    header("Location: login.html");
+    header("Location: index.html");
     exit;
 }
 ?>
