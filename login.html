@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="login-style.css" />
+</head>
+<body>
+    <div class="login-container">
+        
+        <form action="login.php" method="post" class="login-form">
+            <h2>Sign In</h2>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" required autofocus />
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required />
+            </div>
+            <!-- Error message placeholder -->
+            <div id="error-message" style="color:red; font-weight:bold; margin-bottom: 15px; display:none;">
+                Invalid username or password!
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        // Show error message if URL contains ?error=1
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('error') === '1') {
+            document.getElementById('error-message').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+
